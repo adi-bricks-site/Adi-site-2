@@ -1,0 +1,97 @@
+<script>
+    import { each } from "svelte/internal";
+    import adiLogo from "../../assets/adi-logo.svg";
+    import Button from "../button.svelte";
+    import Link from "./link.svelte";
+    import categoriesList from "../../stores/categories"; 
+
+    export let product
+    export let contact
+ 
+    let categories;
+
+    categoriesList.subscribe(data => {
+        categories = data;
+        console.debug(data)
+    });
+</script>
+
+<main>
+    <div class=" px-16 pt-12 headergrid w-full">
+        <div class="left">
+            <a href="/">
+                <img class="h-[46px]" src={adiLogo} alt="Adi Bricks Logo" />
+            </a>
+        </div>
+        <div class="flex justify-center center sm:invisible md:visible">
+            <Link name="home" link="/"/>
+            <!-- <Link name="products" link="#products" /> -->
+            <a class="float-left px-6 text-[#969696] font-black font-poppins group" href={product}>
+                <p class="capitalize whitespace-nowrap  duration-500 group-hover:underline underline-offset-8 decoration-[3px] decoration-purple-400 group-hover:text-zinc-700">products</p>
+                <div class="dropdown invisible opacity-0 group-hover:opacity-100 group-hover:visible absolute border-2 border-purple-500 rounded-lg duration-200 mt-2 bg-white -translate-x-[30px] ">
+                    <div class="flex flex-col divide-y-2 dropdown-links">
+
+                        <!-- current erro, it is not going to the child element -->
+                        {#each categories as item} 
+                            <a href={item.categoryLink}><p>{item.categoryName}</p></a>
+                        {/each}
+
+                    </div>
+                </div>
+            </a>
+            
+            <!-- <Link name="contact us" link="#contact"/> -->
+            <Link name="about us" link="#"/>
+        </div>
+        <div class="right sm:invisible md:visible">
+            <Button name="contact us" link={contact}/>
+        </div>
+    </div>
+</main>
+
+<style>
+    .headergrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-auto-columns: 1fr 1fr 1fr;
+        grid-auto-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        align-items: center;
+        grid-template-areas: "left center right";
+    }
+
+    .left {
+        grid-area: left;
+    }
+
+    .center {
+        grid-area: center;
+    }
+
+    .right {
+        grid-area: right;
+        justify-self: end;
+    }
+
+    .dropdown-links > a{
+        padding: 10px 20px 10px 20px;
+        transition: 300ms;
+    }
+
+    .dropdown{
+        box-shadow: 0px 6px 16px 1px rgba(0, 0, 0, 0.25);
+        z-index: 2;
+    }
+
+    .dropdown-links > a:hover{
+        color: rgb(63 63 70);
+        background-color: rgb(233 213 255)
+    }
+    a{
+        border-radius: 0.3rem;
+    }
+
+    
+</style>

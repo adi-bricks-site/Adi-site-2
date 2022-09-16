@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+// import Card from '../components/Card.astro';
+import Landing from "../sections/landing.svelte"
+import Productpage from "../sections/productpage.svelte"
+import Contact from "../sections/contact.svelte";
+import Sitemap from "../sections/sitemap.svelte"
+import CarouselComponent from "../sections/carousel.svelte"
+---
+
+<Layout title="Adi Bricks">
+	<main>
+		<section class="bg-white w-screen h-screen block">
+			<!-- SECTION 1, LANDING -->
+			<Landing client:load/>
+		</section>
+		<section class="carousel1">
+			<CarouselComponent client:load/>
+		</section>
+		<section class="bg-[#F4F4F4] w-full will-change-auto" id="products">
+			<!-- PRODUCTS -->
+			<Productpage client:load/>
+		</section>
+		<section id="contact" class="w-full">
+			<Contact />
+
+		</section>
+		
+		<section class="w-full h-60 bg-black">
+			<Sitemap />
+		</section>
+	</main>
+</Layout>
+
+<style>
+	html, body {
+		padding: 0;
+		margin: 0;
+		scroll-behavior: smooth;
+	}
+</style>
