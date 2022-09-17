@@ -2,18 +2,27 @@
 import Header from "../components/landing-section/header.svelte";
 import Layout from "../layouts/Layout.astro";
 import Sitemap from "../sections/sitemap.svelte";
-import Touchform from "../components/touchform.svelte";
 import Contact from "../sections/contact.svelte";
 ---
 
-<Layout title="Get in touch with us">
-    <Header product={"https://adibricks.in/#products"} contact={"#contact"} />
+<Layout title="About us">
+    <div class="sticky top-0 z-50">
+        <Header
+            product={"https://adibricks.in/#products"}
+            contact={"#contact"}
+        />
+    </div>
     <section class="p-8 md:px-20 py-16 md:py-32">
         <h1 class="font-bold">Blah Blah Blah</h1>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quas
             ut ex veniam totam? Ipsa nulla labore ducimus saepe obcaecati
             soluta, iste hic vero esse, temporibus magnam itaque maxime. Natus.
+            <br /> <br>
+            <b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus,
+            deleniti beatae.</b> Temporibus quo obcaecati, facere voluptas officiis quos
+            dolore consequuntur <u>atque est</u>, autem vitae porro quidem repellendus voluptate
+            corrupti soluta.
         </p>
     </section>
     <section>

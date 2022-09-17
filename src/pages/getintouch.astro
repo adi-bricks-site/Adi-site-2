@@ -7,7 +7,10 @@ import Contact from "../sections/contact.svelte";
 ---
 
 <Layout title="Get in touch with us">
-    <Header product={"/"} contact={"#contact"}/>
+    
+    <div class="sticky top-0 z-50 ">
+        <Header product={"https://adibricks.in/#products"} contact={"#contact"}/>
+    </div>
     <section>
         <Touchform client:load/>
     </section>
