@@ -29,7 +29,7 @@
 <div class="w-full h-full ">
     <div class="w-full bg-slate-100 h-full ring ring-violet-300 rounded-lg">
         {#await promise}
-            <div class="grid place-items-center w-full h-full">
+            <div class="grid place-items-center w-full h-full py-10">
                 <p class="animate-bounce ">Loading...</p>
             </div>
         {:then slidedata}

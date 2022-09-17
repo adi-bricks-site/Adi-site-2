@@ -1,16 +1,5 @@
 <script>
-	// import { log } from "astro/dist/core/logger/core";
-    // import { log } from "astro/dist/core/logger/core";
-import ProductCard from "../components/ProductCard.svelte";
-    import filter from "../stores/categories";
-    import categoriesList from "../stores/categories"; 
-
-	let category;
-
-    categoriesList.subscribe(data => {
-        category = data;
-        console.debug(data)
-    });
+	import ProductCard from "../components/ProductCard_page.svelte";
 
 	let url =
 		"https://api.airtable.com/v0/appE99jFhnqLXnEJm/Table%201?id=tbls0VnR15vXEiP2w";
@@ -23,9 +12,6 @@ import ProductCard from "../components/ProductCard.svelte";
 	};
 	// use Node.env, to hide the api key
 
-	var filtertext = category
-	let filtertextSetbackCall = filtertext
-
 	let promise = fetch(url, options).then((res) => res.json());
 	// create a var to pass product thumnail
 
@@ -36,7 +22,7 @@ import ProductCard from "../components/ProductCard.svelte";
 	// });
 </script>
 
-<div class="will-change-auto px-48">
+<div class="px-4 md:px-48 w-full">
 	{#await promise}
 		<script
 			async
@@ -53,7 +39,31 @@ import ProductCard from "../components/ProductCard.svelte";
 		</div>
 	{:then data}
 		<!-- promise was fulfilled -->
-		<div class="product-list divide-y divide-gray-400">
+		<div class="product-list divide-y divide-gray-400 w-full">
+			<div class="py-20 ">
+				<h1
+					class="font-bold underline underline-offset-8 decoration-4 decoration-indigo-400"
+					style="font-size: 40px;"
+				>
+					Our Featured Products:
+				</h1>
+				<div class="grid-wrapper pt-4 featured-grid">
+					{#each data.records as product}
+						{#if product.fields.status != "not-available"}
+							{#if product.fields.featured}
+								<ProductCard
+									product_name={product.fields.Product_name}
+									product_description={product.fields
+										.Product_description}
+									primary_image={product.fields
+										.primary_image[0].thumbnails.large.url}
+									--border-color="#818cf8"
+								/>
+							{/if}
+						{/if}
+					{/each}
+				</div>
+			</div>
 			<div class="py-20">
 				<h1
 					class="font-bold underline underline-offset-8 decoration-4 decoration-orange-400"
@@ -61,32 +71,9 @@ import ProductCard from "../components/ProductCard.svelte";
 				>
 					Our Products:
 				</h1>
-				{#if category.filter != ""}
-				<p
-					class="text-zinc-600 bg-zinc-300 rounded p-[10px] px-4 w-fit font-medium"
-				>
-					filter: {filtertext}
-				</p>
-				{/if}
-				<div class="grid-wrapper pt-4">
+				<div class="grid-wrapper pt-4 md:overflow-x-auto product-grid">
 					{#each data.records as product}
-						{#if filtertext != ""}
-							{#if filtertext == product.fields.category}
-								{#if product.fields.status != "not-available"}
-									<ProductCard selectableCallback={filtertextSetbackCall
-									}
-										product_name={product.fields
-											.Product_name}
-										product_description={product.fields
-											.Product_description}
-										primary_image={product.fields
-											.primary_image[0].thumbnails.large
-											.url}
-										--border-color="#fb923c"
-									/>
-								{/if}
-							{/if}
-						{:else if product.fields.status != "not-available"}
+						{#if product.fields.status != "not-available"}
 							<ProductCard
 								product_name={product.fields.Product_name}
 								product_description={product.fields
@@ -109,17 +96,6 @@ import ProductCard from "../components/ProductCard.svelte";
 			</div>
 		</div>
 	{/await}
-
-	<button on:click={() => {
-		categoriesList.set("")
-		console.log(categoriesList)
-							
-	}}>
-	All Products</button>
-
-	<!-- {#if modalState == true}
-			<Modal product_name="MSM" />
-		{/if} -->
 </div>
 
 <style>
@@ -129,7 +105,31 @@ import ProductCard from "../components/ProductCard.svelte";
 		gap: 0.7rem;
 		justify-items: center;
 		align-items: start;
-		justify-content: center;
 		justify-content: space-evenly;
+	}
+	@media only screen and (max-width: 768px) {
+		.grid-wrapper{
+		grid-template-columns: repeat(2, 1fr);
+		/* grid-template-rows: repeat(2,1fr); */
+		grid-auto-flow: row; 
+		grid-auto-columns: 1fr 1fr;
+		justify-items: center;
+		align-items: center;
+		justify-content: start;
+		
+		}
+		.featured-grid{
+			overflow-x: scroll;
+			grid-template-rows: repeat(1,1fr);
+			scroll-padding-left: 3em;
+			scroll-padding-right: 3em;
+			
+		}
+
+		.product-grid{
+			gap: 0.1rem;
+		}
+		
+
 	}
 </style>

@@ -85,6 +85,13 @@
 						{/if}
 					{/each}
 				</div>
+				<div class="pt-4 md:pt-8">
+					<a
+						href="/products"
+						class="text-zinc-500 underline underline-offset-[7px] decoration-2 hover:translate-x-2 duration-200 "
+						>See all products ➜</a
+					>
+				</div>
 			</div>
 		</div>
 	{:catch error}
@@ -108,32 +115,27 @@
 		justify-content: space-evenly;
 	}
 	@media only screen and (max-width: 768px) {
-		.grid-wrapper{
-		/* grid-template-columns: repeat(2, 1fr); */
-		grid-template-rows: repeat(2,1fr);
-		grid-auto-flow: column; 
-		grid-auto-columns: 1fr;
-		justify-items: center;
-		align-items: center;
-		justify-content: start;
-		
+		.grid-wrapper {
+			/* grid-template-columns: repeat(2, 1fr); */
+			grid-template-rows: repeat(2, 1fr);
+			grid-auto-flow: column;
+			grid-auto-columns: 1fr;
+			justify-items: center;
+			align-items: center;
+			justify-content: start;
 		}
-		.featured-grid{
+		.featured-grid {
 			overflow-x: scroll;
-			grid-template-rows: repeat(1,1fr);
+			grid-template-rows: repeat(1, 1fr);
 			scroll-padding-left: 3em;
 			scroll-padding-right: 3em;
-			
 		}
 
-		.product-grid{
+		.product-grid {
 			gap: 0.3rem;
 			overflow-x: scroll;
 
 			scroll-padding-left: 3rem;
-
 		}
-		
-
 	}
 </style>

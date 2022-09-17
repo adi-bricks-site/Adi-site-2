@@ -2,13 +2,18 @@
     import Header from "../components/landing-section/header.svelte";
     import Layout from "../layouts/Layout.astro";
     import Productpage from "../sections/productpage_page.svelte";
+import Sitemap from "../sections/sitemap.svelte";
+    
 ---
 
 <main>
     <Layout title="Our Products">
         <div class="w-screen">
-            <Header contact={"hello"} product={"#product"} client:load/>
+            <Header contact={"/"} product={"#"} client:load/>
             <Productpage client:load />
+            <div class="bg-black">
+                <Sitemap />
+            </div>
         </div>
     </Layout>
 </main>
