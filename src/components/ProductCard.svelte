@@ -15,8 +15,7 @@
 <main>
 	<button on:click={() => {
 		modalActive.set(true)
-		console.log(modalState)
-							
+		console.log(modalState)					
 	}}>
 	<div class="w-44 md:w-auto">
 		<div
