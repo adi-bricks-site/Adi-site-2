@@ -14,10 +14,10 @@
     <div class=" px-16 py-6 headergrid w-full border-b-2">
         <div class="left">
             <a href="/">
-                <img class="h-[46px]" src={adiLogo} alt="Adi Bricks Logo" />
+                <img class=" h-11 md:h-[46px]" src={adiLogo} alt="Adi Bricks Logo" />
             </a>
         </div>
-        <div class="flex justify-center center invisible md:visible">
+        <div class=" justify-center center md:flex hidden">
             <Link name="home" link="/"/>
             <!-- <Link name="products" link="#products" /> -->
             <a class="float-left px-6 text-[#969696] font-black font-poppins group" href={product}>
@@ -35,9 +35,9 @@
             </a>
             
             <!-- <Link name="contact us" link="#contact"/> -->
-            <Link name="about us" link="#"/>
+            <Link name="about us" link="/aboutus"/>
         </div>
-        <div class="right invisible md:visible">
+        <div class="right hidden md:block">
             <Button name="contact us" link={contact}/>
         </div>
     </div>
@@ -59,6 +59,15 @@
         backdrop-filter: blur(5px);
         border-color: rgba(211, 211, 211, 0.233);
     }
+
+    @media only screen 
+   and (max-width : 768px) {
+    .headergrid{
+        display: block;
+        grid-template-areas: "left left left";
+
+    }
+}
 
     .left {
         grid-area: left;
