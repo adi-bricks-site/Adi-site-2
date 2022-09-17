@@ -22,13 +22,13 @@ import CarouselLanding from "../sections/carousel-landing.svelte";
 				
 				<Landing client:load/>
 			</section>
-			<section class="px-5 py-10">
+			<section class="px-5 py-10 md:hidden">
 				<CarouselLanding client:load/>
 			</section>
 			<section class="carousel1 z-10 md:block hidden">
 				<CarouselComponent client:load/>
 			</section>
-			<section class="bg-[#F4F4F4] w-full will-change-auto" id="products">
+			<section class="bg-[#F4F4F4] w-full" id="products">
 				<!-- PRODUCTS -->
 				<Productpage client:load/>
 			</section>

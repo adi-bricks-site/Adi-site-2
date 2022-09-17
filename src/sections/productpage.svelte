@@ -22,7 +22,7 @@
 	// });
 </script>
 
-<div class="will-change-auto px-4 md:px-48 w-full">
+<div class="px-4 md:px-48 w-full">
 	{#await promise}
 		<script
 			async
@@ -47,7 +47,7 @@
 				>
 					Our Featured Products:
 				</h1>
-				<div class="grid-wrapper pt-4" id="featured-grid">
+				<div class="grid-wrapper pt-4 featured-grid">
 					{#each data.records as product}
 						{#if product.fields.status != "not-available"}
 							{#if product.fields.featured}
@@ -71,7 +71,7 @@
 				>
 					Our Products:
 				</h1>
-				<div class="grid-wrapper pt-4 overflow-x-scroll md:overflow-x-auto scroll-px-6" id="product-grid">
+				<div class="grid-wrapper pt-4 md:overflow-x-auto product-grid">
 					{#each data.records as product}
 						{#if product.fields.status != "not-available"}
 							<ProductCard
@@ -105,7 +105,6 @@
 		gap: 0.7rem;
 		justify-items: center;
 		align-items: start;
-		justify-content: center;
 		justify-content: space-evenly;
 	}
 	@media only screen and (max-width: 768px) {
@@ -114,19 +113,25 @@
 		grid-template-rows: repeat(2,1fr);
 		grid-auto-flow: column; 
 		grid-auto-columns: 1fr;
+		justify-items: center;
+		align-items: center;
+		justify-content: start;
 		
 		}
-		#featured-grid{
+		.featured-grid{
+			overflow-x: scroll;
 			grid-template-rows: repeat(1,1fr);
 			scroll-padding-left: 3em;
 			scroll-padding-right: 3em;
 			
 		}
 
-		#product-grid{
-			scroll-padding-left: 3em;
-			scroll-padding-right: 3em;
+		.product-grid{
 			gap: 0.3rem;
+			overflow-x: scroll;
+
+			scroll-padding-left: 3rem;
+
 		}
 		
 

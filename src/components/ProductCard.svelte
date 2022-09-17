@@ -18,7 +18,7 @@
 		console.log(modalState)
 							
 	}}>
-	<div>
+	<div class="w-44 md:w-auto">
 		<div
 			class="card-border bg-white card-shadow border-2 border-gray-200 hover:border-4 duration-100  group hover:cursor-pointer"
 		>
