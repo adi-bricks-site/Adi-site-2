@@ -1,17 +1,14 @@
 <script>
     import ButtonLanding from "../components/button-landing.svelte";
-    import Header from "../components/landing-section/header.svelte";
     const title_slogan = "Lightweight, Sustainable & Strong Bricks";
 
     import CarouselComponentLanding from "../sections/carousel-landing.svelte";
 </script>
 
 <div
-    class="gcontainer h-full [grid-template-rows: auto 1fr] [grid-template-columns: 1.5fr 1fr]"
+    class="gcontainer h-full relative"
 >
-    <div class="header">
-        <Header contact={"#contact"} product={"#products"} />
-    </div>
+
 
     <div class="left  pt-[9vh] pl-24">
         <h1
@@ -46,25 +43,26 @@
         }
     } */
 
-    @media only screen and (max-width: 600px) {
+
+    @media only screen and (min-width: 768px) {
     .gcontainer {
-            grid-template-areas: "header header" "right right" "left left";
+        grid-template-areas: "left right" "left right" "left right";
+
         }
     }
 
-    @media only screen and (min-width: 600px) {
-    .gcontainer {
-        grid-template-areas: "header header" "left left" "right right";
-        }
-    }
+
 
     .gcontainer {
         display: grid;
-
+        grid-template-rows: auto 1fr;
         gap: 0px 20px;
-        grid-auto-flow: row;
         
-    }
+        
+        grid-auto-flow: row;
+        grid-template-columns: 1.5fr 1fr;
+        }
+        
 
     .left {
         grid-area: left;
@@ -74,7 +72,5 @@
         grid-area: right;
     }
 
-    .header {
-        grid-area: header;
-    }
+
 </style>

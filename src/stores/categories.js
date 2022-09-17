@@ -1,20 +1,6 @@
 import { writable } from "svelte/store";
 
-const categoriesList = writable([
+const filter = writable("d")
 
 
-    {
-        "categoryList": [
-            {
-                "categoryName": "msm",
-                "categoryLink": "/products"
-            },
-            {
-                "categoryName": "msm1",
-                "categoryLink": "/products1"
-            }
-        ]
-    }
-])
-
-export default categoriesList
+export default filter

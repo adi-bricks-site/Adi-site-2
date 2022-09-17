@@ -1,49 +1,43 @@
 <script>
-    import { each } from "svelte/internal";
+    // import { each } from "svelte/internal";
     import adiLogo from "../../assets/adi-logo.svg";
     import Button from "../button.svelte";
     import Link from "./link.svelte";
-    import categoriesList from "../../stores/categories"; 
 
     export let product
     export let contact
  
-    let categories;
-
-    categoriesList.subscribe(data => {
-        categories = data;
-        console.debug(data)
-    });
+    
 </script>
 
 <main>
-    <div class=" px-16 pt-12 headergrid w-full">
+    <div class=" px-16 py-6 headergrid w-full border-b-2">
         <div class="left">
             <a href="/">
                 <img class="h-[46px]" src={adiLogo} alt="Adi Bricks Logo" />
             </a>
         </div>
-        <div class="flex justify-center center sm:invisible md:visible">
+        <div class="flex justify-center center invisible md:visible">
             <Link name="home" link="/"/>
             <!-- <Link name="products" link="#products" /> -->
             <a class="float-left px-6 text-[#969696] font-black font-poppins group" href={product}>
                 <p class="capitalize whitespace-nowrap  duration-500 group-hover:underline underline-offset-8 decoration-[3px] decoration-purple-400 group-hover:text-zinc-700">products</p>
-                <div class="dropdown invisible opacity-0 group-hover:opacity-100 group-hover:visible absolute border-2 border-purple-500 rounded-lg duration-200 mt-2 bg-white -translate-x-[30px] ">
+                <!-- <div class="dropdown invisible opacity-0 group-hover:opacity-100 group-hover:visible absolute border-2 border-purple-500 rounded-lg duration-200 mt-2 bg-white -translate-x-[50%] ">
                     <div class="flex flex-col divide-y-2 dropdown-links">
 
-                        <!-- current erro, it is not going to the child element -->
-                        {#each categories as item} 
-                            <a href={item.categoryLink}><p>{item.categoryName}</p></a>
-                        {/each}
+                        
+                        
+                            <a href=""><p>habijabi</p></a>
+                        
 
                     </div>
-                </div>
+                </div> -->
             </a>
             
             <!-- <Link name="contact us" link="#contact"/> -->
             <Link name="about us" link="#"/>
         </div>
-        <div class="right sm:invisible md:visible">
+        <div class="right invisible md:visible">
             <Button name="contact us" link={contact}/>
         </div>
     </div>
@@ -60,6 +54,10 @@
         grid-auto-flow: row;
         align-items: center;
         grid-template-areas: "left center right";
+
+        background: rgba(217, 217, 217, 0.19);
+        backdrop-filter: blur(5px);
+        border-color: rgba(211, 211, 211, 0.233);
     }
 
     .left {
@@ -75,7 +73,7 @@
         justify-self: end;
     }
 
-    .dropdown-links > a{
+    /* .dropdown-links > a{
         padding: 10px 20px 10px 20px;
         transition: 300ms;
     }
@@ -88,7 +86,7 @@
     .dropdown-links > a:hover{
         color: rgb(63 63 70);
         background-color: rgb(233 213 255)
-    }
+    } */
     a{
         border-radius: 0.3rem;
     }

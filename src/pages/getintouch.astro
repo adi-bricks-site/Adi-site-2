@@ -1,0 +1,22 @@
+---
+import Header from "../components/landing-section/header.svelte";
+import Layout from "../layouts/Layout.astro";
+import Sitemap from "../sections/sitemap.svelte";
+import Touchform from "../components/touchform.svelte";
+import Contact from "../sections/contact.svelte";
+---
+
+<Layout title="Get in touch with us">
+    <Header product={"/"} contact={"#contact"}/>
+    <section>
+        <Touchform client:load/>
+    </section>
+    <section>
+        <Contact />
+    </section>
+    <section class="w-screen bg-black">
+        <Sitemap />
+    </section>
+</Layout>
+
+

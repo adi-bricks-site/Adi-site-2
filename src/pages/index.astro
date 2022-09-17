@@ -6,29 +6,37 @@ import Productpage from "../sections/productpage.svelte"
 import Contact from "../sections/contact.svelte";
 import Sitemap from "../sections/sitemap.svelte"
 import CarouselComponent from "../sections/carousel.svelte"
+import Header from "../components/landing-section/header.svelte";
+
 ---
 
 <Layout title="Adi Bricks">
-	<main>
-		<section class="bg-white w-screen h-screen block">
-			<!-- SECTION 1, LANDING -->
-			<Landing client:load/>
-		</section>
-		<section class="carousel1">
-			<CarouselComponent client:load/>
-		</section>
-		<section class="bg-[#F4F4F4] w-full will-change-auto" id="products">
-			<!-- PRODUCTS -->
-			<Productpage client:load/>
-		</section>
-		<section id="contact" class="w-full">
-			<Contact />
-
-		</section>
-		
-		<section class="w-full h-60 bg-black">
-			<Sitemap />
-		</section>
+	<main class="bg-white">
+		<div class="sticky top-0 z-50 ">
+			<Header contact={"#contact"} product={"#products"} />
+		</div>
+		<div>
+			<section class="bg-white w-screen h-[80vh] block">
+				<!-- SECTION 1, LANDING -->
+				
+				<Landing client:load/>
+			</section>
+			<section class="carousel1 z-10">
+				<CarouselComponent client:load/>
+			</section>
+			<section class="bg-[#F4F4F4] w-full will-change-auto" id="products">
+				<!-- PRODUCTS -->
+				<Productpage client:load/>
+			</section>
+			<section id="contact" class="w-full">
+				<Contact />
+	
+			</section>
+			
+			<section class="w-full bg-black">
+				<Sitemap />
+			</section>
+		</div>
 	</main>
 </Layout>
 

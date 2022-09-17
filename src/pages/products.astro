@@ -1,7 +1,7 @@
 ---
     import Header from "../components/landing-section/header.svelte";
     import Layout from "../layouts/Layout.astro";
-    import Productpage from "../sections/productpage.svelte";
+    import Productpage from "../sections/productpage_page.svelte";
 ---
 
 <main>
@@ -9,9 +9,7 @@
         <div class="w-screen">
             <Header contact={"hello"} product={"#product"} client:load/>
             <Productpage client:load />
-
         </div>
-
     </Layout>
 </main>
 

@@ -6,10 +6,10 @@
 
     let phoneno = 7001376204;
     let email = "msm74588@gmail.com";
-    let whatsapp_no = 7001376204
-    let maps_share_link = "https://goo.gl/maps/pht1abqeS3QpyXzt5"
+    let whatsapp_no = 7001376204;
+    let maps_share_link = "https://maps.app.goo.gl/X3jMXJ1TGhkXErPr6";
 
-    let mail_body = `mailto:${email}?subject = Feedback&body = Message`
+    let mail_body = `mailto:${email}?subject = Feedback&body = Message`;
 </script>
 
 <div class="w-full h-full bg-con bg-local bg-cover bg-center px-[10vw] py-14">
@@ -18,63 +18,51 @@
     >
         <div class="text-center pt-24 font-poppins font-bold">
             <h1>Contact Us</h1>
-            <p>
-                Let's talk about your project.
-            </p>
+            <p>Let's talk about your project.</p>
             <div class="buttongroup pt-6">
-                <button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-2"
+                <a href="/getintouch"><button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-2"
                     >Get in touch with us</button
-                >
+                ></a>
                 <button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-2"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-2"
                     >Send us an Inquiry</button
                 >
             </div>
         </div>
         <div class="w-full h-full grid place-items-center py-10">
             <div class="flex lg:flex-row flex-col">
-                <div
-                    class="contact-card"
-                >
-                    <a
-                        href={mail_body}
-                    >
+                <div class="contact-card">
+                    <a href={mail_body}>
                         <button class="flex items-center ">
                             <img class="inline-block" src={Mail} alt={Mail} />
-                            <p class="inline-block  text-left">
+                            <p class="inline-block  text-left break-words sm:break-words">
                                 Email us {email}
                             </p>
                         </button>
                     </a>
                 </div>
-                <div
-                    class="contact-card"
-                >
+                <div class="contact-card">
                     <a href={maps_share_link} target="_blank">
                         <button class="flex items-center ">
                             <img class="inline-block" src={Maps} alt={Maps} />
-                            <p class="inline-block  text-left">
+                            <p class="inline-block  text-left break-words sm:break-words">
                                 Locate us on Maps
                             </p>
                         </button>
                     </a>
                 </div>
-                <div
-                    class="contact-card"
-                >
+                <div class="contact-card">
                     <a href="tel:{phoneno}">
                         <button class="flex items-center">
                             <img class="inline-block" src={Phone} alt={Phone} />
-                            <p class="inline-block text-left">
+                            <p class="inline-block text-left break-words sm:break-words">
                                 Call us {phoneno}
                             </p>
                         </button>
                     </a>
                 </div>
-                <div
-                    class="contact-card"
-                >
+                <div class="contact-card">
                     <a href="https://api.whatsapp.com/send?phone={whatsapp_no}">
                         <button class="flex items-center">
                             <img
@@ -82,7 +70,7 @@
                                 src={Whatsapp}
                                 alt={Whatsapp}
                             />
-                            <p class="inline-block text-left">
+                            <p class="inline-block text-left break-words sm:break-words">
                                 Contact via whatsapp
                             </p>
                         </button>
@@ -101,7 +89,8 @@
 
     img {
         padding-right: 15px;
-        height: 60px;
+        height: 3vw;
+        margin: auto;
     }
 
     .contact-card {
@@ -118,13 +107,9 @@
             5px 5px 13px rgba(161, 161, 161, 0.9);
     }
 
-    .contact-card:hover{
+    .contact-card:hover {
         box-shadow: 0 0 0 3px rgb(196 181 253);
         scale: 105%;
-    }
-
-    .contact-card > p {
-        word-wrap: break-word;
     }
 
 </style>
