@@ -12,7 +12,7 @@
     let mail_body = `mailto:${email}?subject = Feedback&body = Message`;
 </script>
 
-<div class="w-full h-full bg-con bg-local bg-cover bg-center px-[10vw] py-14">
+<div class="w-full h-full bg-con bg-local bg-cover bg-center px-4 md:px-[10vw] py-4 md:py-14">
     <div
         class="w-full h-full border-indigo-300 border-[6px] rounded-3xl bg-white grid col-auto px-[3vw]"
     >
