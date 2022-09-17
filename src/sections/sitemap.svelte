@@ -3,7 +3,7 @@
 </script>
 
 <div class="h-full gcontainer p-12">
-    <div class="w-[50vh] h-full left">
+    <div class="w-auto md:w-[50vh] h-full left">
         <div class="w-full h-full flex align-base">
          <div>
             <img class="h-14 " src={adiLogoWhite} alt="adi-bricks" />
@@ -48,7 +48,8 @@
         grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
         grid-template-areas:
-    "left" "right";
+    "right" "left";
+    gap: 2rem;
 
     }
 }
