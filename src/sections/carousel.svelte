@@ -27,7 +27,7 @@
     );
 </script>
 
-<div class="w-full p-10 bg-purple-200 ">
+<div class="w-full p-2 md:p-10  bg-purple-200 ">
     <div class="w-full rounded-lg bg-slate-100 border-4 border-slate-400 h-full">
        
 
