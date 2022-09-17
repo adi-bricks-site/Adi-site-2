@@ -7,5 +7,6 @@ export default defineConfig({
     config: {
       applyBaseStyles: false
     }
-  }), svelte()]
+  }), svelte()],
+  adapter: netlify()
 });
