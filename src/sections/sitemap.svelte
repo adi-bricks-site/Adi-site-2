@@ -42,6 +42,17 @@
     "left right";
 }
 
+@media only screen 
+   and (max-width : 768px) {
+    .gcontainer{
+        grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+    "left" "right";
+
+    }
+}
+
 .left { grid-area: left; }
 
 .right { grid-area: right; }
