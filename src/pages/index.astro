@@ -7,6 +7,7 @@ import Contact from "../sections/contact.svelte";
 import Sitemap from "../sections/sitemap.svelte"
 import CarouselComponent from "../sections/carousel.svelte"
 import Header from "../components/landing-section/header.svelte";
+import CarouselLanding from "../sections/carousel-landing.svelte";
 
 ---
 
@@ -16,12 +17,15 @@ import Header from "../components/landing-section/header.svelte";
 			<Header contact={"#contact"} product={"#products"} />
 		</div>
 		<div>
-			<section class="bg-white w-screen h-[80vh] block">
+			<section class="bg-white w-screen h-auto md:h-[80vh] block">
 				<!-- SECTION 1, LANDING -->
 				
 				<Landing client:load/>
 			</section>
-			<section class="carousel1 z-10">
+			<section class="px-5 py-10">
+				<CarouselLanding client:load/>
+			</section>
+			<section class="carousel1 z-10 md:block hidden">
 				<CarouselComponent client:load/>
 			</section>
 			<section class="bg-[#F4F4F4] w-full will-change-auto" id="products">

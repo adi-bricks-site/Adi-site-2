@@ -1,7 +1,6 @@
 <script>
 	import ProductCard from "../components/ProductCard.svelte";
 
-
 	let url =
 		"https://api.airtable.com/v0/appE99jFhnqLXnEJm/Table%201?id=tbls0VnR15vXEiP2w";
 
@@ -13,8 +12,6 @@
 	};
 	// use Node.env, to hide the api key
 
-	
-
 	let promise = fetch(url, options).then((res) => res.json());
 	// create a var to pass product thumnail
 
@@ -25,7 +22,7 @@
 	// });
 </script>
 
-<div class="will-change-auto px-48">
+<div class="will-change-auto px-4 md:px-48 w-full">
 	{#await promise}
 		<script
 			async
@@ -42,15 +39,15 @@
 		</div>
 	{:then data}
 		<!-- promise was fulfilled -->
-		<div class="product-list divide-y divide-gray-400">
-			<div class="py-20">
+		<div class="product-list divide-y divide-gray-400 w-full">
+			<div class="py-20 ">
 				<h1
 					class="font-bold underline underline-offset-8 decoration-4 decoration-indigo-400"
 					style="font-size: 40px;"
 				>
 					Our Featured Products:
 				</h1>
-				<div class="grid-wrapper pt-4">
+				<div class="grid-wrapper pt-4" id="featured-grid">
 					{#each data.records as product}
 						{#if product.fields.status != "not-available"}
 							{#if product.fields.featured}
@@ -74,12 +71,10 @@
 				>
 					Our Products:
 				</h1>
-				<div class="grid-wrapper pt-4">
+				<div class="grid-wrapper pt-4 overflow-x-scroll md:overflow-x-auto scroll-px-6" id="product-grid">
 					{#each data.records as product}
 						{#if product.fields.status != "not-available"}
-						
-	
-						<ProductCard
+							<ProductCard
 								product_name={product.fields.Product_name}
 								product_description={product.fields
 									.Product_description}
@@ -101,8 +96,6 @@
 			</div>
 		</div>
 	{/await}
-
-	
 </div>
 
 <style>
@@ -114,5 +107,28 @@
 		align-items: start;
 		justify-content: center;
 		justify-content: space-evenly;
+	}
+	@media only screen and (max-width: 768px) {
+		.grid-wrapper{
+		/* grid-template-columns: repeat(2, 1fr); */
+		grid-template-rows: repeat(2,1fr);
+		grid-auto-flow: column; 
+		grid-auto-columns: 1fr;
+		
+		}
+		#featured-grid{
+			grid-template-rows: repeat(1,1fr);
+			scroll-padding-left: 3em;
+			scroll-padding-right: 3em;
+			
+		}
+
+		#product-grid{
+			scroll-padding-left: 3em;
+			scroll-padding-right: 3em;
+			gap: 0.3rem;
+		}
+		
+
 	}
 </style>
