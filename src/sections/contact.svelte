@@ -24,10 +24,11 @@
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-2"
                     >Get in touch with us</button
                 ></a>
+               <a href="/inquiry">
                 <button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-2"
-                    >Send us an Inquiry</button
-                >
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-2"
+                >Send us an Inquiry</button
+            ></a>
             </div>
         </div>
         <div class="w-full h-full grid place-items-center py-10">

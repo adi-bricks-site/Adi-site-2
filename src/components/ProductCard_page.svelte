@@ -1,9 +1,13 @@
 <script>
 	import Modal from "../components/modal.svelte";
 	import { modalActive } from "../stores/stores.js";
+	import { modaldata } from "../stores/modaldata.js"
+    import { inquiry } from "../stores/inquiry.js"
 	export let product_name;
-	export let product_description;
+	export let product_description = "";
 	export let primary_image;
+	export let estimated_cost = "";
+	export let main_image
 
 	// console.log(id + product_name + product_description + primary_image)
 	let modalState;
@@ -15,7 +19,14 @@
 <main>
 	<button on:click={() => {
 		modalActive.set(true)
-		console.log(modalState)
+		modalActive.set(true)
+		$modaldata.product_name = product_name
+		$modaldata.product_description = product_description
+		$modaldata.image_link = primary_image
+		$modaldata.estimated_cost = estimated_cost
+		$modaldata.main_image = main_image
+		inquiry.product_name.set($modaldata.product_name);
+		console.log(main_image)	
 							
 	}}>
 	<div class="w-full md:w-auto">

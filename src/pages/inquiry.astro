@@ -1,0 +1,25 @@
+---
+import Header from "../components/landing-section/header.svelte";
+import Layout from "../layouts/Layout.astro";
+import Sitemap from "../sections/sitemap.svelte";
+import Inquiryform from "../components/inquiryform.svelte";
+import Contact from "../sections/contact.svelte";
+---
+
+<Layout title="Get in touch with us">
+    
+    <div class="sticky top-0 z-50 ">
+        <Header product={"https://adibricks.in/#products"} contact={"#contact"}/>
+    </div>
+    <section>
+        <Inquiryform client:load/>
+    </section>
+    <section>
+        <Contact />
+    </section>
+    <section class="w-screen bg-black">
+        <Sitemap />
+    </section>
+</Layout>
+
+

@@ -51,14 +51,14 @@
 					{#each data.records as product}
 						{#if product.fields.status != "not-available"}
 							{#if product.fields.featured}
-								<ProductCard
-									product_name={product.fields.Product_name}
-									product_description={product.fields
-										.Product_description}
-									primary_image={product.fields
-										.primary_image[0].thumbnails.large.url}
-									--border-color="#818cf8"
-								/>
+							<ProductCard
+							product_name={product.fields.Product_name}
+							product_description={product.fields.Product_description}
+							estimated_cost={product.fields.Estimated_Cost}
+							primary_image={product.fields.primary_image[0].thumbnails.large.url}
+							main_image={product.fields.primary_image[0].thumbnails.large.url}
+							--border-color="#818cf8"
+							/>
 							{/if}
 						{/if}
 					{/each}
@@ -74,14 +74,15 @@
 				<div class="grid-wrapper pt-4 md:overflow-x-auto product-grid">
 					{#each data.records as product}
 						{#if product.fields.status != "not-available"}
-							<ProductCard
-								product_name={product.fields.Product_name}
-								product_description={product.fields
-									.Product_description}
-								primary_image={product.fields.primary_image[0]
-									.thumbnails.large.url}
-								--border-color="#fb923c"
+						<ProductCard
+							product_name={product.fields.Product_name}
+							product_description={product.fields.Product_description}
+							estimated_cost={product.fields.Estimated_Cost}
+							primary_image={product.fields.primary_image[0].thumbnails.large.url}
+							main_image={product.fields.primary_image[0].thumbnails.large.url}
+							--border-color="#fb923c"
 							/>
+							
 						{/if}
 					{/each}
 				</div>
