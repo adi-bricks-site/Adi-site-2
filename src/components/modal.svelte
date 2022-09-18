@@ -102,7 +102,7 @@ const handleSubmit = async () => {
                 <p class="pt-5">Estimated Price: INR <b>{$modaldata.estimated_cost}</b>/peice</p>
 
                 <a href="#inquiry"><button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-6" on:click={() =>{
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full my-5 " on:click={() =>{
                         $inquiry.product_name = $modaldata.product_name
                         $inquiry.product_description = $modaldata.product_description
                         isInquiry = true
