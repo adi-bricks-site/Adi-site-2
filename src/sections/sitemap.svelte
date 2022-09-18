@@ -27,7 +27,7 @@
         <div><a href="/aboutus"><p class="font-poppins">About us</p></a></div>
         <div><a href="#contact"><p class="font-poppins">Contact us</p></a></div>
         <div>
-            <a href="#"><p class="font-poppins">Send us an Inquiry</p></a>
+            <a href="/inquiry"><p class="font-poppins">Send us an Inquiry</p></a>
         </div>
         <div>
             <a href="/getintouch"

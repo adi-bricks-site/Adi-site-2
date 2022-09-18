@@ -31,7 +31,7 @@
             ></a>
             </div>
         </div>
-        <div class="w-full h-full grid place-items-center py-10">
+        <div class="w-full h-full grid place-items-center py-3 md:py-10">
             <div class="flex lg:flex-row flex-col">
                 <div class="contact-card">
                     <a href={mail_body}>
