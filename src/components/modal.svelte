@@ -18,10 +18,7 @@
         quantity: ""
     };
 
-    let modalState;
-    modalActive.subscribe((value) => {
-        modalState = value;
-    });
+
 
     let tableurl = "https://api.airtable.com/v0/appE99jFhnqLXnEJm/inquiry"
 
@@ -106,6 +103,7 @@ const handleSubmit = async () => {
                         $inquiry.product_name = $modaldata.product_name
                         $inquiry.product_description = $modaldata.product_description
                         isInquiry = true
+                        
 
                     }}
                     >Send us Inquiry about this product</button
@@ -151,7 +149,7 @@ const handleSubmit = async () => {
         <div
             class="fixed top-0 left-0 w-full h-full z-[-1]"
             on:click={() => {
-                modalActive.set(false);
+                $modalActive = false;
                 console.log("Modal unfocused");
             }}
         />
