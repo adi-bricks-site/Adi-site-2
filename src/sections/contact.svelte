@@ -4,12 +4,16 @@
     import Phone from "../assets/phone.svg";
     import Maps from "../assets/maps.svg";
 
-    let phoneno = 7001376204;
-    let email = "msm74588@gmail.com";
-    let whatsapp_no = 7001376204;
+    let phoneno = 9732628109;
+    let email = "adiflyashbrick@gmail.com";
+    let whatsapp_no = 9153812526;
     let maps_share_link = "https://maps.app.goo.gl/X3jMXJ1TGhkXErPr6";
 
+<<<<<<< HEAD
+    let mail_body = `mailto:${email}?subject = Inquiry for product &body = For product`
+=======
     let mail_body = `mailto:${email}?subject = Feedback&body = Message`;
+>>>>>>> cd97e4209c71b1ec5bcd3875cbbccfd8628a6a80
 </script>
 
 <div class="w-full h-full bg-con bg-local bg-cover bg-center px-4 md:px-[10vw] py-4 md:py-14">

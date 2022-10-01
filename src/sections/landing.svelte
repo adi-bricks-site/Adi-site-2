@@ -21,8 +21,11 @@
             <strong
                 >Brick is a core material that is commonly used to build the
                 wall of a building.</strong
-            > Clay bricks are the most common brick type. It is made from sand and
-            clay and uniformly burnt at temperatures between 800°C and 1200°C.
+            >The clay ash bricks manufactured by manual or extrusion process,
+            mixing of ash (60%) with clay or moderate plasticity. The green 
+            bricks are dry under the atmospheric condition at an equilibrium moisture 
+            level of 3%. Dried brick is fired in kilns at a temperature of 1000C +- 
+            30C with a soaking period of approximately 5 to 7 hours.
         </h2>
         <div class="pt-5">
             <ButtonLanding name="OUR PRODUCTS" link="#products" />
