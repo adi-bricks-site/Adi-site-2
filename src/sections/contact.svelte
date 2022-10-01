@@ -9,11 +9,7 @@
     let whatsapp_no = 9153812526;
     let maps_share_link = "https://maps.app.goo.gl/X3jMXJ1TGhkXErPr6";
 
-<<<<<<< HEAD
-    let mail_body = `mailto:${email}?subject = Inquiry for product &body = For product`
-=======
-    let mail_body = `mailto:${email}?subject = Feedback&body = Message`;
->>>>>>> cd97e4209c71b1ec5bcd3875cbbccfd8628a6a80
+    let mail_body = `mailto:${email}?subject=Inquiry for product&body=For product`
 </script>
 
 <div class="w-full h-full bg-con bg-local bg-cover bg-center px-4 md:px-[10vw] py-4 md:py-14">
