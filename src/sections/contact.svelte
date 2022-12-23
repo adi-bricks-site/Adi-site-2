@@ -6,7 +6,7 @@
 
     let phoneno = 9732628109;
     let email = "adiflyashbrick@gmail.com";
-    let whatsapp_no = 9153812526;
+    let whatsapp_no = 9732628109;
     let maps_share_link = "https://maps.app.goo.gl/X3jMXJ1TGhkXErPr6";
 
     let mail_body = `mailto:${email}?subject=Inquiry for product&body=For product`
