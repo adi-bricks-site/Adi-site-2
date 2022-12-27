@@ -1,6 +1,7 @@
 <script>
     // import { each } from "svelte/internal";
-    import adiLogo from "../../assets/adi-logo.svg";
+    // import adiLogo from "../../assets/adi-logo.svg";
+    import adiLogo from "../../assets/adibricks_logo.png";
     import Button from "../button.svelte";
     import Link from "./link.svelte";
 
