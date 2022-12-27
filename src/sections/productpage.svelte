@@ -2,7 +2,7 @@
 	import ProductCard from "../components/ProductCard.svelte";
 
 	let url =
-		"https://api.airtable.com/v0/appE99jFhnqLXnEJm/Table%201?id=tbls0VnR15vXEiP2w";
+		"https://api.airtable.com/v0/appsWOLKfMpJcm5QX/Table%201?id=tbls0VnR15vXEiP2w";
 
 	let options = {
 		method: "GET",

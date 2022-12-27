@@ -14,7 +14,7 @@
 
     let errors = {};
 
-    let tableurl = "https://api.airtable.com/v0/appE99jFhnqLXnEJm/get-in-touch-responses"
+    let tableurl = "https://api.airtable.com/v0/appsWOLKfMpJcm5QX/get-in-touch-responses"
 
     function submit() { fetch(tableurl, {
         method: 'POST',

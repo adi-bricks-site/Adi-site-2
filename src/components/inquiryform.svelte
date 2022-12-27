@@ -17,7 +17,7 @@
 
     let errors = {};
 
-    let tableurl = "https://api.airtable.com/v0/appE99jFhnqLXnEJm/inquiry"
+    let tableurl = "https://api.airtable.com/v0/appsWOLKfMpJcm5QX/inquiry"
 
     function submit() { fetch(tableurl, {
         method: 'POST',

@@ -11,7 +11,8 @@
     import "swiper/css/scrollbar";
 
     let landing_carousel_url =
-        "https://api.airtable.com/v0/appE99jFhnqLXnEJm/landing-carousel";
+        "https://api.airtable.com/v0/appsWOLKfMpJcm5QX/landing-carousel";
+        
 
     let options = {
         method: "GET",
