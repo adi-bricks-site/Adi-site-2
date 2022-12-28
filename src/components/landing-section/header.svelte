@@ -13,9 +13,9 @@
 
 <main>
     <div class=" px-16 py-6 headergrid w-full border-b-2 demo" style="background: white !important;">
-        <div class="left">
+        <div class="left" style="text-align: -webkit-center;">
             <a href="/">
-                <img class=" h-11 md:h-[46px]" src={adiLogo} alt="Adi Bricks Logo" style="max-width: 100%;height: auto;"/>
+                <img class=" h-11 md:h-[46px]" src={adiLogo} alt="Adi Bricks Logo" style="width: 48%;height: auto;"/>
             </a>
         </div>
         <div class=" justify-center center md:flex hidden">
