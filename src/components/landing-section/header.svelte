@@ -12,7 +12,8 @@
 </script>
 
 <main>
-    <div class=" px-16 py-6 headergrid w-full border-b-2 demo" style="background: white !important;">
+    <div class=" px-16 py-6 headergrid w-full border-b-2 demo" style="background: white !important;padding-top: 0px;
+    padding-bottom: 0px;">
         <div class="left" style="text-align: -webkit-center;">
             <a href="/">
                 <img class=" h-11 md:h-[46px]" src={adiLogo} alt="Adi Bricks Logo" style="width: 48%;height: auto;"/>
